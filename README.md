@@ -34,8 +34,11 @@ Recommendation Levels
 The app provides food and beverage recommendations at different levels:
 
 Level 1: General Top Selling Items
+
 Level 2: Perfect Things to Eat and Drink based on Vibe
+
 Level 3: Advanced Personalized Recommendations
+
 QR Code Generation
 QR codes are generated for general user information. They can be scanned and shared for easy access to recommendations.
 
