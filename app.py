@@ -230,64 +230,64 @@ def get_current_time_period():
 # Dictionary with messages for each feature and similarity level
 messages = {
     'danceability': {
-        'high': "This suggests that you enjoy upbeat and energetic music. Consider food items that are also high in energy, such as spicy food or foods that are high in sugar.",
-        'medium': "This suggests that you have a moderate likeness for upbeat and energetic music. Consider trying out dishes that have a balanced combination of flavors and textures.",
-        'low': "While your likeness for danceable music is relatively low, you can still explore food options that provide a pleasant dining experience and complement your music preferences."
+        'high': "General Tip for you: \n This suggests that you enjoy upbeat and energetic music. Consider food items that are also high in energy, such as spicy food or foods that are high in sugar.",
+        'medium': "General Tip for you: \n This suggests that you have a moderate likeness for upbeat and energetic music. Consider trying out dishes that have a balanced combination of flavors and textures.",
+        'low': "General Tip for you: \n While your likeness for danceable music is relatively low, you can still explore food options that provide a pleasant dining experience and complement your music preferences."
     },
     'energy': {
-        'high': "This suggests that you are interested in food that is too heavy or filling. You should eat food with high calories to give you that energy!",
-        'medium': "This suggests that you have a moderate likeness for energetic music. Consider food options that provide sustained energy, such as whole grains, lean proteins, and healthy fats.",
-        'low': "While your likeness for energetic music is relatively low, you can still enjoy a variety of delicious and satisfying food options."
+        'high': "General Tip for you: \n This suggests that you are interested in food that is too heavy or filling. You should eat food with high calories to give you that energy!",
+        'medium': "General Tip for you: \n This suggests that you have a moderate likeness for energetic music. Consider food options that provide sustained energy, such as whole grains, lean proteins, and healthy fats.",
+        'low': "General Tip for you: \n While your likeness for energetic music is relatively low, you can still enjoy a variety of delicious and satisfying food options."
     },
     'key': {
-        'high': "This suggests that you enjoy music that is bright and cheerful. Consider food items that are also bright and colorful, such as fruits and vegetables.",
-        'medium': "This suggests that you have a moderate likeness for music with bright and cheerful tones. Consider exploring diverse food options that offer a mix of flavors and visual appeal.",
-        'low': "While your likeness for music with bright and cheerful tones is relatively low, you can still explore a variety of interesting and flavorful food options."
+        'high': "General Tip for you: \n This suggests that you enjoy music that is bright and cheerful. Consider food items that are also bright and colorful, such as fruits and vegetables.",
+        'medium': "General Tip for you: \n This suggests that you have a moderate likeness for music with bright and cheerful tones. Consider exploring diverse food options that offer a mix of flavors and visual appeal.",
+        'low': "General Tip for you: \n While your likeness for music with bright and cheerful tones is relatively low, you can still explore a variety of interesting and flavorful food options."
     },
     'loudness': {
-        'high': "This suggests that you enjoy music that is loud and in-your-face. Consider food items that are also bold and flavorful, such as spicy dishes or foods with strong flavors.",
-        'medium': "This suggests that you have a moderate likeness for music with a moderate loudness. Consider exploring food options that offer a balanced blend of flavors and aromas.",
-        'low': "While your likeness for music with a loud and in-your-face sound is relatively low, you can still enjoy a variety of delicious and satisfying food options."
+        'high': "General Tip for you: \n General Tip for you: \n This suggests that you enjoy music that is loud and in-your-face. Consider food items that are also bold and flavorful, such as spicy dishes or foods with strong flavors.",
+        'medium': "TGeneral Tip for you: \n his suggests that you have a moderate likeness for music with a moderate loudness. Consider exploring food options that offer a balanced blend of flavors and aromas.",
+        'low': "General Tip for you: \n While your likeness for music with a loud and in-your-face sound is relatively low, you can still enjoy a variety of delicious and satisfying food options."
     },
     'mode': {
-        'high': "This suggests a preference for music with a specific modality. Consider exploring food options that have distinct characteristics or are unique in nature.",
-        'medium': "This suggests that you have a moderate likeness for music with a specific modality. Consider trying out different cuisines and dishes that offer unique flavor profiles.",
-        'low': "While your likeness for music with a specific modality is relatively low, you can still explore a variety of interesting and flavorful food options."
+        'high': "General Tip for you: \n This suggests a preference for music with a specific modality. Consider exploring food options that have distinct characteristics or are unique in nature.",
+        'medium': "General Tip for you: \n This suggests that you have a moderate likeness for music with a specific modality. Consider trying out different cuisines and dishes that offer unique flavor profiles.",
+        'low': "General Tip for you: \n While your likeness for music with a specific modality is relatively low, you can still explore a variety of interesting and flavorful food options."
     },
     'speechiness': {
-        'high': "This suggests that you enjoy music with prominent vocals. Consider exploring food options that are inspired by different cultures and regions, as they often have rich flavors and unique combinations that can be enjoyed alongside the music.",
-        'medium': "This suggests that you have a moderate likeness for music with prominent vocals. Consider exploring a variety of food options that offer diverse flavors and culinary traditions.",
-        'low': "While your likeness for music with prominent vocals is relatively low, you can still explore a variety of interesting and flavorful food options."
+        'high': "General Tip for you: \n This suggests that you enjoy music with prominent vocals. Consider exploring food options that are inspired by different cultures and regions, as they often have rich flavors and unique combinations that can be enjoyed alongside the music.",
+        'medium': "General Tip for you: \n This suggests that you have a moderate likeness for music with prominent vocals. Consider exploring a variety of food options that offer diverse flavors and culinary traditions.",
+        'low': "General Tip for you: \n While your likeness for music with prominent vocals is relatively low, you can still explore a variety of interesting and flavorful food options."
     },
     'acousticness': {
-        'high': "This suggests an appreciation for music with a more organic and natural sound. Consider exploring farm-to-table or organic food options, as well as dishes made with fresh and locally sourced ingredients for a wholesome dining experience.",
-        'medium': "This suggests that you have a moderate appreciation for music with a more organic and natural sound. Consider exploring food options that focus on fresh and natural ingredients.",
-        'low': "While your appreciation for music with an organic and natural sound is relatively low, you can still explore a variety of interesting and flavorful food options."
+        'high': "General Tip for you: \n This suggests an appreciation for music with a more organic and natural sound. Consider exploring farm-to-table or organic food options, as well as dishes made with fresh and locally sourced ingredients for a wholesome dining experience.",
+        'medium': "General Tip for you: \n This suggests that you have a moderate appreciation for music with a more organic and natural sound. Consider exploring food options that focus on fresh and natural ingredients.",
+        'low': "General Tip for you: \n While your appreciation for music with an organic and natural sound is relatively low, you can still explore a variety of interesting and flavorful food options."
     },
     'instrumentalness': {
-        'high': "This indicates a liking for music without vocals or with minimal vocals. In terms of food, explore culinary experiences that focus on the art of plating, presentation, and innovative flavor combinations to enhance the dining experience.",
-        'medium': "This suggests that you have a moderate likeness for instrumental music. Consider exploring food options that offer unique sensory experiences and culinary craftsmanship.",
-        'low': "While your likeness for instrumental music is relatively low, you can still enjoy a variety of delicious and satisfying food options."
+        'high': "General Tip for you: \n This indicates a liking for music without vocals or with minimal vocals. In terms of food, explore culinary experiences that focus on the art of plating, presentation, and innovative flavor combinations to enhance the dining experience.",
+        'medium': "General Tip for you: \n This suggests that you have a moderate likeness for instrumental music. Consider exploring food options that offer unique sensory experiences and culinary craftsmanship.",
+        'low': "General Tip for you: \n While your likeness for instrumental music is relatively low, you can still enjoy a variety of delicious and satisfying food options."
     },
     'liveness': {
-        'high': "This suggests that you enjoy music that feels more alive and dynamic. Consider food options that offer interactive or live cooking experiences, such as teppanyaki or sushi-making.",
-        'medium': "This suggests that you have a moderate likeness for music that feels alive and dynamic. Consider exploring food options that provide interactive or engaging dining experiences.",
-        'low': "While your likeness for music that feels alive and dynamic is relatively low, you can still enjoy a variety of delicious and satisfying food options."
+        'high': "General Tip for you: \n This suggests that you enjoy music that feels more alive and dynamic. Consider food options that offer interactive or live cooking experiences, such as teppanyaki or sushi-making.",
+        'medium': "General Tip for you: \n This suggests that you have a moderate likeness for music that feels alive and dynamic. Consider exploring food options that provide interactive or engaging dining experiences.",
+        'low': "General Tip for you: \n While your likeness for music that feels alive and dynamic is relatively low, you can still enjoy a variety of delicious and satisfying food options."
     },
     'valence': {
-        'high': "This suggests an affinity for music with a positive and uplifting mood. Consider food options that evoke similar emotions, such as dishes with vibrant colors, refreshing flavors, or desserts that bring joy and indulgence.",
-        'medium': "This suggests that you have a moderate affinity for music with a positive and uplifting mood. Consider exploring food options that offer a balanced combination of flavors and textures.",
-        'low': "While your affinity for music with a positive and uplifting mood is relatively low, you can still enjoy a variety of delicious and satisfying food options."
+        'high': "General Tip for you: \n This suggests an affinity for music with a positive and uplifting mood. Consider food options that evoke similar emotions, such as dishes with vibrant colors, refreshing flavors, or desserts that bring joy and indulgence.",
+        'medium': "General Tip for you: \n This suggests that you have a moderate affinity for music with a positive and uplifting mood. Consider exploring food options that offer a balanced combination of flavors and textures.",
+        'low': "General Tip for you: \n While your affinity for music with a positive and uplifting mood is relatively low, you can still enjoy a variety of delicious and satisfying food options."
     },
     'tempo': {
-        'high': "This suggests a preference for music with a specific tempo. Consider food options that match the tempo, such as quick bites or snacks for upbeat music, or slow-cooked dishes for slower tempo music.",
-        'medium': "This suggests that you have a moderate preference for music with a specific tempo. Consider exploring food options that offer a diverse range of flavors and textures.",
-        'low': "While your preference for music with a specific tempo is relatively low, you can still explore a variety of interesting and flavorful food options."
+        'high': "General Tip for you: \n This suggests a preference for music with a specific tempo. Consider food options that match the tempo, such as quick bites or snacks for upbeat music, or slow-cooked dishes for slower tempo music.",
+        'medium': "TGeneral Tip for you: \n his suggests that you have a moderate preference for music with a specific tempo. Consider exploring food options that offer a diverse range of flavors and textures.",
+        'low': "General Tip for you: \n While your preference for music with a specific tempo is relatively low, you can still explore a variety of interesting and flavorful food options."
     },
     'time_signature': {
-        'high': "This suggests a preference for music with a specific time signature. Consider food options that have distinct characteristics or are unique in nature.",
-        'medium': "This suggests that you have a moderate preference for music with a specific time signature. Consider exploring food options that offer diverse culinary traditions and techniques.",
-        'low': "While your preference for music with a specific time signature is relatively low, you can still explore a variety of interesting and flavorful food options."
+        'high': "General Tip for you: \n This suggests a preference for music with a specific time signature. Consider food options that have distinct characteristics or are unique in nature.",
+        'medium': "General Tip for you: \n This suggests that you have a moderate preference for music with a specific time signature. Consider exploring food options that offer diverse culinary traditions and techniques.",
+        'low': "General Tip for you: \n While your preference for music with a specific time signature is relatively low, you can still explore a variety of interesting and flavorful food options."
     }
 }
 
@@ -367,7 +367,7 @@ def recommend_food_and_beverage(level, df, current_time, sorted_percentages, sea
                 st.write(f"Beverages: {name}, Calories: {row['Calories']}, Price: {row['Price']}")
 
     elif level == "3":
-        st.subheader("Level - 3 Recommendation - Distinct Feature Values:")
+        st.subheader("Level - 3 Recommendation - Based on your Spotify Persona:")
 
         # Create dictionaries for feature values
         feature_values = {}
@@ -450,12 +450,41 @@ def generate_general_info_qr(name, gender, age, vegan, weather_data, sorted_perc
 
 
 
+def generate_level_based_qr(output_data, level):
+    # Convert the level-based output data to a formatted string
+    qr_data = f"Level {level} Food and Beverage Recommendations:\n\n"
+    for food_item in output_data[f'level{level}_food']:
+        qr_data += f"Food: {food_item['Food']}, Calories: {food_item['Calories']}, Price: {food_item['Price']}\n"
+    qr_data += "\nHere are the perfect beverage items based on the vibe:\n"
+    for beverage_item in output_data[f'level{level}_beverages']:
+        qr_data += f"Beverages: {beverage_item['Beverages']}, Calories: {beverage_item['Calories']}, Price: {beverage_item['Price']}\n"
+
+    # Generate the QR code
+    qr = qrcode.QRCode(version=1, box_size=10, border=5)
+    qr.add_data(qr_data)
+    qr.make(fit=True)
+    img = qr.make_image(fill_color="black", back_color="white")
+
+    # Display the QR code in Streamlit using st.pyplot()
+    plt.figure(figsize=(10, 10))
+    plt.imshow(img)
+    plt.axis("off")  # Hide axes to remove extra whitespace
+    plt.title(f"QR Code - Level {level} Recommendations")
+    plt.tight_layout()
+
+    # Display the QR code in Streamlit using st.pyplot()
+    st.subheader(f"QR Code for Level {level} Recommendations:")
+    st.pyplot(plt)
+
+
+
+
 
 
 
 # Streamlit app
 def main():
-    st.title("Music and Food Recommendation App")
+    st.title("Food Recommendations from your Spotify Persona!")
 
     # Vegan Food and Beverages Menu
     vegan_menu = {
@@ -641,6 +670,9 @@ def main():
                         st.write(f"Beverages: {beverage_item['Beverages']}, Calories: {beverage_item['Calories']}, Price: {beverage_item['Price']}")
                 
                     
+                    # Generate the QR code for level 3 recommendations
+                    generate_level_based_qr(latest_level_output, 3)
+                      
                       
 
 
@@ -664,6 +696,9 @@ def main():
                     for beverage_item in latest_level_output['level2_beverages']:
                         st.write(f"Beverages: {beverage_item['Beverages']}, Calories: {beverage_item['Calories']}, Price: {beverage_item['Price']}")
 
+     
+                    # Generate the QR code for level 3 recommendations
+                    generate_level_based_qr(latest_level_output, 2)
 
                     
 
@@ -690,6 +725,8 @@ def main():
                         st.write(f"Beverages: {beverage_item['Beverages']}, Calories: {beverage_item['Calories']}, Price: {beverage_item['Price']}")
    
 
+                    # Generate the QR code for level 3 recommendations
+                    generate_level_based_qr(latest_level_output, 3)
 
 
 
