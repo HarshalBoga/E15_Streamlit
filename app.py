@@ -375,19 +375,19 @@ def recommend_food_and_beverage(level, df, current_time, sorted_percentages, sea
         # Check if each feature is present in the sorted percentages and add corresponding values
         if "energy" in sorted_percentages.index:
             energy_values = df[df["Danceability/Energy"] == 1]
-            feature_values["Energy"] = energy_values[["STOCK_DESCRIPTION", "Calories", "Price"]].to_dict(orient="records")
+            feature_values["Energy"] = energy_values[["STOCK_DESCRIPTION", "Calories", "Price"]].drop_duplicates(subset="STOCK_DESCRIPTION").to_dict(orient="records")
 
         if "liveness" in sorted_percentages.index:
             liveness_values = df[df["Liveness"] == 1]
-            feature_values["Liveness"] = liveness_values[["STOCK_DESCRIPTION", "Calories", "Price"]].to_dict(orient="records")
+            feature_values["Liveness"] = liveness_values[["STOCK_DESCRIPTION", "Calories", "Price"]].drop_duplicates(subset="STOCK_DESCRIPTION").to_dict(orient="records")
 
         if "danceability" in sorted_percentages.index:
             danceability_values = df[df["Danceability/Energy"] == 1]
-            feature_values["Danceability"] = danceability_values[["STOCK_DESCRIPTION", "Calories", "Price"]].to_dict(orient="records")
+            feature_values["Danceability"] = danceability_values[["STOCK_DESCRIPTION", "Calories", "Price"]].drop_duplicates(subset="STOCK_DESCRIPTION").to_dict(orient="records")
 
         if "loudness" in sorted_percentages.index:
             loudness_values = df[df["Loudness"] == 1]
-            feature_values["Loudness"] = loudness_values[["STOCK_DESCRIPTION", "Calories", "Price"]].to_dict(orient="records")
+            feature_values["Loudness"] = loudness_values[["STOCK_DESCRIPTION", "Calories", "Price"]].drop_duplicates(subset="STOCK_DESCRIPTION").to_dict(orient="records")
 
         # Print the distinct feature values with separators
         for feature, values in feature_values.items():
@@ -395,6 +395,7 @@ def recommend_food_and_beverage(level, df, current_time, sorted_percentages, sea
                 st.subheader(f"\nRecommendations based on {feature} column:")
                 for item in values:
                     st.write(f"Food/Beverage: {item['STOCK_DESCRIPTION']}, Calories: {item['Calories']}, Price: {item['Price']}")
+
 
     else:
         st.error("Invalid input! Please enter either '1', '2', or '3' for the recommendation level.")
@@ -707,26 +708,28 @@ def main():
                 elif level_prompt == "3" and latest_level_output:
 
                     st.subheader("Level 3 Food and Beverage Recommendations:")
-                    level3_text = ""
+                    unique_food_items = set()
+                    unique_beverage_items = set()
+
                     for food_item in latest_level_output['level3_food']:
-                        level3_text += f"Food: {food_item['Food']}, Calories: {food_item['Calories']}, Price: {food_item['Price']}\n"
+                        unique_food_items.add((food_item['Food'], food_item['Calories'], food_item['Price']))
 
-                    level3_text += "\nHere are the perfect beverage items based on the vibe:\n"
                     for beverage_item in latest_level_output['level3_beverages']:
-                        level3_text += f"Beverages: {beverage_item['Beverages']}, Calories: {beverage_item['Calories']}, Price: {beverage_item['Price']}\n"
-
-
+                        unique_beverage_items.add((beverage_item['Beverages'], beverage_item['Calories'], beverage_item['Price']))
 
                     st.subheader("Level - 3 Recommendation : Advanced Personalized Recommendations!")
-                    for food_item in latest_level_output['level3_food']:
-                        st.write(f"Food: {food_item['Food']}, Calories: {food_item['Calories']}, Price: {food_item['Price']}")
 
-                    for beverage_item in latest_level_output['level3_beverages']:
-                        st.write(f"Beverages: {beverage_item['Beverages']}, Calories: {beverage_item['Calories']}, Price: {beverage_item['Price']}")
-   
+                    st.write("Food Recommendations:")
+                    for food_item in unique_food_items:
+                        st.write(f"Food: {food_item[0]}, Calories: {food_item[1]}, Price: {food_item[2]}")
 
-                    # Generate the QR code for level 3 recommendations
-                    generate_level_based_qr(latest_level_output, 3)
+                    st.write("Beverage Recommendations:")
+                    for beverage_item in unique_beverage_items:
+                        st.write(f"Beverages: {beverage_item[0]}, Calories: {beverage_item[1]}, Price: {beverage_item[2]}")
+
+
+                        # Generate the QR code for level 3 recommendations
+                        generate_level_based_qr(latest_level_output, 3)
 
 
 
