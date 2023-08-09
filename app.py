@@ -354,7 +354,7 @@ def recommend_food_and_beverage(level, df, current_time, sorted_percentages, sea
 
     if level == "1":
         st.subheader("Level 1 Recommendation - General Top Selling Items:")
-        st.write("Here are the top selling food items:")
+
         food_items = df[(df['Stock Description'].str.contains('Food')) & (df['Stock Description'].str.contains('Beverage') == False)].nlargest(10, 'TOTAL_PRICE_INCLDISC')
         food_items = food_items.drop_duplicates(subset='STOCK_DESCRIPTION')
 
@@ -370,7 +370,7 @@ def recommend_food_and_beverage(level, df, current_time, sorted_percentages, sea
             }
             level1_recommendations.append(recommendation)
 
-        st.write("Here are the top selling beverage items:")
+
         beverage_items = df[(df['Stock Description'].str.contains('Beverage')) & (df['Stock Description'].str.contains('Food') == False)].nlargest(10, 'TOTAL_PRICE_INCLDISC')
         beverage_items = beverage_items.drop_duplicates(subset='STOCK_DESCRIPTION')
 
@@ -385,7 +385,13 @@ def recommend_food_and_beverage(level, df, current_time, sorted_percentages, sea
             }
             level1_recommendations.append(recommendation)
 
-        st.table(pd.DataFrame(level1_recommendations))
+        if level1_recommendations:
+          recommendations_df = pd.DataFrame(level1_recommendations)
+          recommendations_df.index = range(1, len(recommendations_df) + 1)
+          st.table(recommendations_df)
+        else:
+          st.write("No recommendations found based on the vibe.")
+          
 
     elif level == "2":
         st.subheader("Recommendation Level - 2: Perfect things to eat and drink based on the vibe!")
@@ -410,7 +416,7 @@ def recommend_food_and_beverage(level, df, current_time, sorted_percentages, sea
         # Filter the dataset based on the current season and time period
         matching_items = df[(df['Season'] == season) & (df['Time Period'] == time_period)]
 
-        st.write("\nHere are the perfect food items based on the vibe:")
+
         food_items = matching_items[matching_items['Stock Description'].str.contains('Food')]
         if food_items.empty:
             st.write("No matching food items found.")
@@ -426,7 +432,7 @@ def recommend_food_and_beverage(level, df, current_time, sorted_percentages, sea
                 }
                 level2_recommendations.append(recommendation)
 
-        st.write("Here are the perfect beverage items based on the vibe:")
+
         beverage_items = matching_items[matching_items['Stock Description'].str.contains('Beverage')]
         if beverage_items.empty:
             st.write("No matching beverage items found.")
@@ -442,7 +448,15 @@ def recommend_food_and_beverage(level, df, current_time, sorted_percentages, sea
                 }
                 level2_recommendations.append(recommendation)
 
-        st.table(pd.DataFrame(level2_recommendations))
+
+        if level2_recommendations:
+            recommendations_df = pd.DataFrame(level2_recommendations)
+            recommendations_df.index = range(1, len(recommendations_df) + 1)
+            st.table(recommendations_df)
+        else:
+            st.write("No recommendations found based on the vibe.")        
+
+        
 
 
 
@@ -508,9 +522,11 @@ def recommend_food_and_beverage(level, df, current_time, sorted_percentages, sea
                 level3_recommendations.append(recommendation)
 
         if level3_recommendations:
-            st.table(pd.DataFrame(level3_recommendations))
+            recommendations_df = pd.DataFrame(level3_recommendations)
+            recommendations_df.index = range(1, len(recommendations_df) + 1)
+            st.table(recommendations_df)
         else:
-            st.write("No recommendations found based on your Spotify persona.")
+             st.write("No recommendations found based on your Spotify persona.")
 
     else:
         st.error("Invalid input! Please enter either '1', '2', or '3' for the recommendation level.")
